@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Page not found | Southcraft AI</title>
+<link href="/assets/images/image-b373a978.png" rel="icon" media="(prefers-color-scheme: light)">
+<link href="/assets/images/image-194722a2.png" rel="icon" media="(prefers-color-scheme: dark)">
+<link rel="apple-touch-icon" href="/assets/images/image-50903d9c.jpg">
+<style>
+@font-face{font-family:"Inter";src:url("/assets/fonts/font-5afd6099.woff2") format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Inter";src:url("/assets/fonts/font-8a18e34e.woff2") format("woff2");font-weight:500;font-display:swap}
+@font-face{font-family:"Inter";src:url("/assets/fonts/font-cd48ba5f.woff2") format("woff2");font-weight:700;font-display:swap}
+*{box-sizing:border-box;margin:0}
+html,body{height:100%}
+body{font-family:"Inter",system-ui,sans-serif;color:#1a1a1a;background:#f2f2f2;-webkit-font-smoothing:antialiased;font-feature-settings:"cv09","cv03","cv04","cv11"}
+a{color:#1a1a1a;text-decoration:none}
+a:hover{color:#f03b3c}
+.page{position:relative;min-height:100%;display:flex;flex-direction:column;overflow:hidden}
+.bg{position:absolute;inset:0;background:url("/assets/images/image-006dc261.jpg") center/cover no-repeat}
+.bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(242,242,242,.92) 0%,rgba(242,242,242,.75) 45%,rgba(242,242,242,0) 80%)}
+header,main,footer{position:relative;z-index:1;padding:0 48px}
+header{display:flex;justify-content:space-between;align-items:center;height:96px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:500;font-size:18px;letter-spacing:-.02em}
+.brand img{width:34px;height:auto}
+.lang{display:flex;gap:16px;font-size:14px;color:#404040;background:rgba(242,242,242,.9);padding:8px 12px;border-radius:2px}
+.lang a{color:#404040}.lang a[aria-current]{color:#1a1a1a}
+main{flex:1;display:flex;flex-direction:column;justify-content:center;gap:28px;max-width:760px}
+.chip{align-self:flex-start;border:1px solid #999;border-radius:2px;padding:7px 10px;font-size:13px;letter-spacing:-.015em;line-height:1}
+h1{font-weight:400;font-size:clamp(40px,6vw,72px);line-height:1.05;letter-spacing:-.055em;text-wrap:balance}
+p.lead{font-size:20px;line-height:1.3;letter-spacing:-.02em;color:#404040;max-width:520px;text-wrap:pretty}
+.btn{position:relative;align-self:flex-start;display:inline-flex;align-items:center;gap:14px;background:#1a1a1a;color:#fff;border-radius:2px;padding:16px 22px;font-weight:700;font-size:15px;letter-spacing:-.01em;overflow:hidden;isolation:isolate}
+.btn::before{content:"";position:absolute;inset:0;background:#f03b3c;transform:translateX(-101%);transition:transform .45s cubic-bezier(.2,.8,.2,1);z-index:-1}
+.btn:hover{color:#fff}.btn:hover::before{transform:none}
+.btn span{transition:transform .45s cubic-bezier(.2,.8,.2,1)}.btn:hover span{transform:translateX(4px)}
+footer{display:flex;justify-content:space-between;align-items:center;height:80px;font-size:13px;color:#636363}
+@media (max-width:720px){header,main,footer{padding:0 24px}.bg::after{background:rgba(242,242,242,.85)}footer{flex-direction:column;justify-content:center;gap:4px;height:96px}}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="bg" aria-hidden="true"></div>
+  <header>
+    <a class="brand" href="/" data-home><img src="/assets/images/image-b373a978.png" alt="">Southcraft AI</a>
+    <nav class="lang"><a href="/" data-l="en">EN</a><a href="/es/" data-l="es">ES</a></nav>
+  </header>
+  <main>
+    <div class="chip" data-t="chip">Error 404</div>
+    <h1 data-t="title">This page doesn’t exist or has moved.</h1>
+    <p class="lead" data-t="lead">The link may be broken or the address mistyped. Head back to the homepage to keep exploring our AI advisory and implementation services.</p>
+    <a class="btn" href="/" data-home><b data-t="cta">Back to home</b><span>→</span></a>
+  </main>
+  <footer>
+    <div data-t="copy">©2026 Southcraft AI / MACADE SRL</div>
+    <div data-t="rights">All Rights Reserved</div>
+  </footer>
+</div>
+<script>
+(function(){
+  var es=/^\/es(\/|$)/.test(location.pathname)||(!/^\/en/.test(location.pathname)&&/^es/i.test((navigator.languages&&navigator.languages[0])||navigator.language||''));
+  var T={es:{title:"Esta página no existe o fue movida.",lead:"Es posible que el enlace esté roto o que la dirección tenga un error. Volvé al inicio para seguir conociendo nuestros servicios de consultoría e implementación de IA.",cta:"Volver al inicio",rights:"Todos los derechos reservados",doc:"Página no encontrada | Southcraft AI"}};
+  document.querySelector('[data-l="'+(es?'es':'en')+'"]').setAttribute('aria-current','true');
+  if(!es)return;
+  document.documentElement.lang='es-AR';document.title=T.es.doc;
+  document.querySelectorAll('[data-t]').forEach(function(n){var v=T.es[n.getAttribute('data-t')];if(v)n.textContent=v;});
+  document.querySelectorAll('[data-home]').forEach(function(a){a.href='/es/';});
+})();
+</script>
+</body>
+</html>
